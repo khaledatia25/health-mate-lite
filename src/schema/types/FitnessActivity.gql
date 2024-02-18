@@ -1,0 +1,27 @@
+type FitnessActivity {
+  id: ObjectId!
+  steps: Int!
+  date: String
+  addtitionalDetails: String
+  user: User!
+}
+
+type Query {
+  fitnessActivity(id: ID!): FitnessActivity!
+  fitnessActivities: [FitnessActivity]!
+}
+
+type Mutation {
+  createFitnessActivity(
+    steps: Int!
+    date: String
+    addtitionalDetails: String
+  ): FitnessActivity!
+  updateFitnessActivity(
+    id: ID!
+    steps: Int
+    date: String
+    addtitionalDetails: String
+  ): FitnessActivity!
+  deleteFitnessActivity(id: ID!): FitnessActivity!
+}

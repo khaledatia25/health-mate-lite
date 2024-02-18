@@ -1,0 +1,17 @@
+type Goal {
+  id: ObjectId!
+  targetSteps: Int!
+  deadline: String!
+  user: User!
+}
+
+type Query {
+  goal(id: ID!): Goal!
+  goals: [Goal]
+}
+
+type Mutation {
+  createGoal(targetSteps: Int!, deadline: String!): Goal!
+  updateGoal(id: ID!, targetSteps: Int, deadline: String): Goal!
+  deleteGoal(id: ID!): Goal!
+}

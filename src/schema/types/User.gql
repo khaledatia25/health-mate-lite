@@ -1,0 +1,17 @@
+type User {
+  id: ObjectId!
+  username: String!
+  email: String!
+  name: String!
+  age: Int!
+  gender: String!
+  height: Float!
+  weight: Float!
+  fitnessActivities: [FitnessActivity!]!
+  goals: [Goal!]!
+  calorieIntakes: [CalorieIntake!]!
+}
+
+type Query {
+  user: User
+}

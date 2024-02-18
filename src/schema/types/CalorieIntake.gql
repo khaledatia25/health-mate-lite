@@ -1,0 +1,27 @@
+type CalorieIntake {
+  id: ObjectId!
+  calories: Int!
+  date: String!
+  addtitionalDetails: String
+  user: User!
+}
+
+type Query {
+  calorieIntake(id: ID!): CalorieIntake!
+  calorieIntakes: [CalorieIntake]!
+}
+
+type Mutation {
+  createCalorieIntake(
+    calories: Int!
+    date: String!
+    addtitionalDetails: String
+  ): CalorieIntake!
+  updateCalorieIntake(
+    id: ID!
+    calories: Int
+    date: String
+    addtitionalDetails: String
+  ): CalorieIntake!
+  deleteCalorieIntake(id: ID!): CalorieIntake!
+}
